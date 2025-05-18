@@ -1,0 +1,22 @@
+.custom-stepper {
+    margin: 20px;
+  }
+  
+  .step-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 10px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .step-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
