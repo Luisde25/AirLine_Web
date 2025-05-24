@@ -1,38 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet, Routes } from '@angular/router';
+import { TravelersComponent } from '../../travelers/container/travelers.component';
+import { CityComponent } from '../../city/container/city.component';
 
 @Component({
   selector: 'app-navbar',
+  imports: [
+     RouterLink, 
+     RouterLinkActive],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
   
 })
 export class NavbarComponent implements OnInit {
 
+   routes: Routes = [
+    { path: 'travel', component: TravelersComponent },
+    { path: 'city', component: CityComponent },
+  ];
 
-  constructor(
-      private router: Router
-
+  constructor( 
   ){
 
   }
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    console.info('...Ejecutando Navbar');
   }
 
   calledTravel() {
     console.info(".... LLamando a lista Viajeros")
-    this.router.navigate(["/travel"])
   }
 
-  calledPassager() {
-    console.info(".... LLamando a lista Viajeros")
-    this.router.navigate(["/passager"])
-  }
 
   calledCity() {
     console.info(".... LLamando a lista Viajeros")
-    this.router.navigate(["/city"])
   }
 
 }

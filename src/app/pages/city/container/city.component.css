@@ -1,0 +1,43 @@
+.add-city {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    color: black;
+    font-weight: 600;
+    user-select: none; /* para que no se seleccione al clickear */
+    margin: 49px 13px -2px 48px;
+    font-size: 16px;
+  }
+  
+  .add-city mat-icon {
+    font-size: 20px;
+    color: red;
+  }
+  .add-city:hover {
+    color: black; /* un azul más oscuro al pasar el mouse */
+  }
+
+  .datatable {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
+  
+  .datatable thead {
+    background-color: #b71c1c;
+    color: white;
+    user-select: none;
+  }
+  
+  .datatable th, .datatable td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .datatable tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  

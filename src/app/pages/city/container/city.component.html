@@ -1,0 +1,23 @@
+
+<span class="add-city">
+    <mat-icon>add</mat-icon>
+    <strong>Agregar Ciudad</strong>
+  </span>
+
+  <table class="datatable">
+    <thead>
+      <tr>
+        <th>Ciudad</th>
+        <th> Departamento </th>
+        <th> País</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td>{{ item.city }}</td>
+        <td>{{ item.department }}</td>
+        <td>{{ item.country }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

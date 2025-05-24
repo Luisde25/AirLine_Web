@@ -9,5 +9,7 @@ import { Router } from '@angular/router';
 })
 export class TravelersComponent {
   
- 
+ constructor(){
+  console.log("Viajando")
+ }
 }
