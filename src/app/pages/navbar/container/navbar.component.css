@@ -1,3 +1,46 @@
+.navbar {
+    background-color: #b71c1c;/* rojo Avianca */
+    padding: 10px 653px;
+    color: white;
+    font-family: 'Century Gothic', sans-serif;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  
+  .logo {
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    font-family: 'Century Gothic', sans-serif;
+    margin-left: -272%;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 115px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #ffb3b3;
+    transform: scale(1.2); /* Expande 20% el texto */
+  }
+  
+
 
   /* Solo es Footer */
   
@@ -33,7 +76,6 @@
   background-color: white; /* azredul bootstrap */
   color: white;
   transform: scale(0.98); /* efecto ligero de presión */
-  transition: transform 0.1s ease;
 }
 
 /* Hover en los items */
@@ -41,84 +83,15 @@
   color: black;
   font-weight: bold;
   cursor: pointer;
+  transition: transform 0.1s ease;
 }
 
 .dropdown-item.active, .dropdown-item:active {
-  text-decoration: none;
-  background-color: white; /* azredul bootstrap */
   color: black;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #b71c1c; /* rojo oscuro */
-  padding: 10px 20px;
-  flex-wrap: wrap;
-  color: white;
-}
-
-.logo svg text {
-  fill: #ffffff;
-}
-
-.navbar-container {
-  display: flex;
-  align-items: center;
-}
-
-.dropdown {
-  position: relative;
-  margin: 0px 310px 0px 11px;
-  letter-spacing: 2px;
-}
-
-.nav-link.dropdown {
-  cursor: pointer;
-  color: white;
-  font-weight: bold;
   text-decoration: none;
+  background-color: white
 }
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 180px;
-  background: white;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  z-index: 1000;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 10px 15px;
-  text-decoration: none;
-  color: #b71c1c; /* rojo texto */
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  border-radius: 2px;
-}
-
-/* Responsive para móviles */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -157,4 +130,5 @@
     color: white;
     padding-left: 10px;
   }
+
 }

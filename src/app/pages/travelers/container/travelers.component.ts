@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @Component({
   selector: 'app-travelers',
-  imports: [],
+  imports: [MatIconModule],
   templateUrl: './travelers.component.html',
   styleUrls: ['./travelers.component.css']
 })
@@ -12,4 +13,6 @@ export class TravelersComponent {
  constructor(){
   console.log("Viajando")
  }
+
+ 
 }

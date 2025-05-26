@@ -1,1 +1,29 @@
-<p>Viajando.....</p>
+
+<div class="title">
+    <h2>Lista de Pasajeros</h2>
+</div>
+
+
+<span class="add-pasager" >
+    <mat-icon>add</mat-icon>
+    <strong>Agregar Pasajeros</strong>
+  </span>
+
+  <table class="datatable">
+    <thead>
+      <tr>
+        <th> Nombres</th>
+        <th> Apellidos </th>
+        <th> Ciudad</th>
+        <th> Pais</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td>{{ item.city }}</td>
+        <td>{{ item.department }}</td>
+        <td>{{ item.country }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

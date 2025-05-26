@@ -1,0 +1,52 @@
+<div class="modal-container">
+    <div class="modal-header">
+        <h2>Agregar Ciudad</h2>
+        <button class="btn-icon-close" (click)="cancel()">X</button>
+    </div>
+
+    <div>
+        <form [formGroup]="addCreate" (ngSubmit)="onSubmit()">
+            <fieldset class="mb-3">
+                <label for="Pais" class="form-label">País</label>
+                <select 
+                  id="Pais" 
+                  class="form-select mb-2" 
+                  formControlName="country"
+                  aria-label="Seleccione el país">
+                  <option value="" disabled>Elige un país</option>
+                  <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+                </select>
+              
+                <label for="Departamento" class="form-label">Departamento</label>
+                    <select 
+                    id="Departamento" 
+                    class="form-select mb-2" 
+                    formControlName="department"
+                    aria-label="Selecciona departamento" 
+                    [disabled]="!departments.length"
+                    >
+                    <option value="" disabled>Elige un departamento</option>
+                    <option *ngFor="let dept of departments" [value]="dept">{{ dept }}</option>
+                    </select>
+
+                <label for="Ciudad" class="form-label">Ciudad</label>
+                <select 
+                    id="Ciudad" 
+                    class="form-select mb-2" 
+                    formControlName="city"
+                    aria-label="Selecciona ciudad"
+                    [disabled]="!cities.length"
+                    >
+                    <option value="" disabled>Elige una ciudad</option>
+                    <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+                </select>
+            
+            </fieldset>
+          
+            <div class="options">
+              <button class="btn btn-primary" type="submit">Crear</button>
+            </div>
+          </form>
+    </div>
+
+</div>

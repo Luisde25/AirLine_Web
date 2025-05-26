@@ -6,13 +6,13 @@
     color: black;
     font-weight: 600;
     user-select: none; /* para que no se seleccione al clickear */
-    margin: 49px 13px -2px 48px;
-    font-size: 16px;
+    margin: 30px 10px 17px 15px;
+    font-size: 17px;
   }
   
   .add-city mat-icon {
     font-size: 20px;
-    color: red;
+    color: #b71c1c;
   }
   .add-city:hover {
     color: black; /* un azul más oscuro al pasar el mouse */

@@ -1,38 +1,32 @@
 <nav class="navbar">
-  <div class="logo">
-    <svg width="280" height="80" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg" aria-label="AirLine logo">
-      <path d="M20 60 C40 20, 70 10, 90 40 S130 70, 150 30" stroke="#FFFFFF" stroke-width="8" fill="none" stroke-linecap="round"/>
-      <text x="160" y="55" font-family="Century Gothic, sans-serif" font-weight="700" font-size="36" fill="#FFFFFF">AirLine</text>
-    </svg>
-  </div>
-
-  <!-- Botón hamburguesa para móviles -->
-  <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" role="button" tabindex="0">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  <div class="navbar-container" id="navbar-container">
-    <div class="dropdown">
-      <a class="nav-link dropdown" role="button" aria-expanded="false">
-        <strong>Información de viajes</strong>
-      </a>
-      <ul class="dropdown-menu">
-        <a class="dropdown-item" routerLink="airline/travel" routerLinkActive="active">Agregar Pasajeros</a>
-        <a class="dropdown-item" routerLink="airline/city" routerLinkActive="active">Agregar Ciudades</a>
-      </ul>
+    <div class="logo">
+        <svg width="280" height="80" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg" aria-label="AirLine logo">
+            <path d="M20 60 C40 20, 70 10, 90 40 S130 70, 150 30" stroke="#FFFFFF" stroke-width="8" fill="none" stroke-linecap="round"/>
+            <text x="160" y="55" font-family="Century Gothic, sans-serif" font-weight="700" font-size="36" fill="#FFFFFF">
+              AirLine
+            </text>
+          </svg>
     </div>
-  </div>
-</nav>
 
+    <div class="navbar-container">
+      <div class="dropdown">
+        <a class="nav-link dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+         <strong>Información de viajes</strong> 
+        </a>
+        <ul class="dropdown-menu">
+          <a class="dropdown-item"  routerLink="airline/travel" routerLinkActive="active" >Agregar Pasajeros</a>
+          <a class="dropdown-item"  routerLink="airline/city" routerLinkActive="active" >Agregar Ciudades</a>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+  
 
-<footer class="footer">
-  <div class="footer-content">
-    <span>© 2025 Airline. Todos los derechos reservados al grupo Thomas.</span>
-  </div>
-</footer>
+  <footer class="footer">
+    <div class="footer-content">
+      <span>© 2025 Airline. Todos los derechos reservados al grupo Thomas.</span>
+    </div>
+  </footer>
 
-
-
-
+  
