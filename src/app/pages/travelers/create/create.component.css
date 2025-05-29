@@ -1,0 +1,132 @@
+/* Fondo general del modal (puedes colocar esto en el componente contenedor del modal) */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  /* Contenedor principal del modal */
+  .modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    padding: 24px;
+    z-index: 1000;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Header del modal */
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .modal-header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  /* Botón de cierre */
+  .btn-icon-close {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #d32f2f;
+    transition: color 0.2s ease;
+  }
+  
+  .btn-icon-close:hover {
+    color: #b71c1c;
+  }
+  
+  /* Formulario y campos */
+  form fieldset {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 0;
+    margin-bottom: 16px;
+  }
+  
+  form label {
+    font-weight: 600;
+    margin-bottom: 4px;
+    margin-top: 12px;
+    color: #444;
+
+  }
+  
+  form input[type="text"] {
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid ;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  form input[type="number"] {
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid ;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  
+  form input[type="text"]:focus {
+    border-color: #b71c1c;
+  }
+  
+  /* Botones */
+  .options {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+  
+  .btn {
+    background-color: #d32f2f;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .btn:hover {
+    background-color: #b71c1c;
+  }
+  
+  select {
+    width: 96%;
+    padding: 0.5rem 0.75rem;
+    border: 2px solid #ccc;
+    border-radius: 0.375rem;
+    background-color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+  select:focus {
+    outline: none;
+    border-color: #3b82f6; /* azul */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  }
+  
+  

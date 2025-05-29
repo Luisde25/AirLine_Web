@@ -1,28 +1,33 @@
 
-<div class="title">
-    <h2>Lista de Pasajeros</h2>
-</div>
-
-
-<span class="add-pasager" >
+<span class="add-pasager" (click)="addPassager()" >
     <mat-icon>add</mat-icon>
     <strong>Agregar Pasajeros</strong>
+  </span>
+  <span class="add-pasager" (click)="delete()">
+    <mat-icon>delete</mat-icon>
+     <strong>Limpiar</strong>
   </span>
 
   <table class="datatable">
     <thead>
       <tr>
-        <th> Nombres</th>
-        <th> Apellidos </th>
-        <th> Ciudad</th>
+        <th> Nombre Completo</th>
+        <th> Tipo de Documento</th>
+        <th> Número de identificación </th>
         <th> Pais</th>
+        <th> Departamento</th>
+        <th> Ciudad</th>
+     
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of data">
-        <td>{{ item.city }}</td>
-        <td>{{ item.department }}</td>
-        <td>{{ item.country }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.typeIdentification }}</td>
+        <td>{{ item.identificationNumber }}</td>
+        <td>{{ item.countries }}</td>
+        <td>{{ item.departments }}</td>
+        <td>{{ item.cities }}</td>
       </tr>
     </tbody>
   </table>

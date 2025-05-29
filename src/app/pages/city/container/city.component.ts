@@ -17,7 +17,7 @@ export class CityComponent implements OnInit {
   data: CityAddDto[] = [];
   city: any[] = [];;
 constructor(
-  private dialog: MatDialog,
+  private dialog: MatDialog
 ){
 
 }

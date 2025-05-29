@@ -1,1 +1,88 @@
-<p>create works!</p>
+<div class="modal-container">
+    <div class="modal-header">
+        <h2>Agregar Pasajero</h2>
+        <button class="btn-icon-close" (click)="cancel()">X</button>
+    </div>
+    
+
+    <div>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <fieldset class="mb-3">
+                <!-- Nombre completo -->
+                <label for="name" class="form-label">Nombre completo</label>
+                <input 
+                  id="name" 
+                  type="text"
+                  maxlength="50"
+                  class="form-control mb-2 w-100" 
+                  formControlName="name"
+                  aria-label="Ingrese el nombre completo"
+                />
+              
+                <!-- Tipo de identificación -->
+                <label for="typeId" class="form-label">Tipo de identificación</label>
+                <select 
+                  id="typeId" 
+                  class="form-select mb-2 w-100" 
+                  formControlName="typeIdentification"
+                  aria-label="Seleccione el tipo de identificación">
+                  <option value="" disabled selected>Elige el tipo de documento</option>
+                  <option *ngFor="let type of typeIdentification" [value]="type">{{ type }}</option>
+                </select>
+              
+                <!-- Número de identificación -->
+                <label for="identificationNumber" class="form-label">Número de identificación</label>
+                <input 
+                  id="identificationNumber" 
+                  type="number"
+                  class="form-control mb-2 w-100" 
+                  formControlName="identificationNumber"
+                  aria-label="Ingrese el número de identificación"
+                  (input)="limitLength($event, 16)"
+                />
+              
+                <!-- País -->
+                <label for="country" class="form-label">País</label>
+                <select 
+                  id="countries" 
+                  class="form-select mb-2 w-100" 
+                  formControlName="countries"
+                  aria-label="Seleccione el país"
+                  >
+                  <option value="" disabled selected>Elige un país</option>
+                  <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+                </select>
+              
+                <!-- Departamento -->
+                <label for="department" class="form-label">Departamento</label>
+                <select 
+                  id="departments" 
+                  class="form-select mb-2 w-100" 
+                  formControlName="departments"
+                  aria-label="Selecciona departamento"
+                  >
+                  <option value="" disabled selected>Elige un departamento</option>
+                  <option *ngFor="let dept of departments" [value]="dept ">{{ dept }}</option>
+                </select>
+              
+                <!-- Ciudad -->
+                <label for="city" class="form-label">Ciudad</label>
+                <select 
+                  id="cities" 
+                  class="form-select mb-2 w-100" 
+                  formControlName="cities"
+                  aria-label="Selecciona ciudad"
+                  >
+                  <option value="" disabled selected>Elige una ciudad</option>
+                  <option *ngFor="let cities of cities" [value]="cities">{{ cities }}</option>
+                </select>
+              </fieldset>
+              
+          
+            <div class="options">
+              <button class="btn btn-primary" type="submit">Crear</button>
+            </div>
+          </form>
+    </div>
+
+</div>
