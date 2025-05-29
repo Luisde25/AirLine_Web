@@ -1,10 +1,10 @@
 {
-  "name": "admin-library-front",
+  "name": "AirLine_Web",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href /admin-library-front/",
+    "build": "ng build --base-href /AirLine_Web/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

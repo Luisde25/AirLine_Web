@@ -13,13 +13,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/admin-library-front/browser",
+            "outputPath": "dist/AirLine_Web/browser",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "baseHref": "/admin-library-front/",
+            "baseHref": "/AirLine_Web/",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
