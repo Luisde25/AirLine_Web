@@ -26,13 +26,13 @@ jobs:
           name: github-AirLine
           path: dist/admin-library-front/browser
 
-deploy:
-  needs: build
-  permissions:
-    pages: write
-    id-token: write
-  runs-on: ubuntu-latest
-  steps:
-    - name: Deploy to Github
-      id: deployment
-      uses: actions/deploy-pages@v4
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Github
+        id: deployment
+        uses: actions/deploy-pages@v4
