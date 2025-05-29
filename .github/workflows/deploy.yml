@@ -4,6 +4,11 @@ on:
   push:
     branches: ["dev_luis"]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,26 +18,27 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v4
+        with:
+          node-version: '18' # o la versión que uses
 
-      - name: install Dependencies
+      - name: Install dependencies
         run: npm install
 
       - name: Build app
         run: npm run build
 
-      - name: Artifact upload
+      - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          name: github-AirLine
           path: dist/admin-library-front/browser
 
   deploy:
     needs: build
+    runs-on: ubuntu-latest
     permissions:
       pages: write
       id-token: write
-    runs-on: ubuntu-latest
     steps:
-      - name: Deploy to Github
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
