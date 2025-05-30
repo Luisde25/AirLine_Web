@@ -1,84 +1,75 @@
+/* NAVBAR GENERAL */
 .navbar {
-    background-color: #b71c1c;/* rojo Avianca */
-    padding: 10px 653px;
-    color: white;
-    font-family: 'Century Gothic', sans-serif;
-  }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    font-size: 18px;
-    letter-spacing: 1px;
-  }
-  
-  .logo {
-    font-weight: 700;
-    color: white;
-    text-decoration: none;
-    font-family: 'Century Gothic', sans-serif;
-    margin-left: -272%;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 115px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .nav-links li a:hover {
-    color: #ffb3b3;
-    transform: scale(1.2); /* Expande 20% el texto */
-  }
-  
+  background-color: #b71c1c;
+  padding: 10px 20px;
+  color: white;
+  font-family: 'Century Gothic', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  font-family: 'Century Gothic', sans-serif;
+}
+
+.title {
+  display: inline-block; /* o block */
+  text-align: center;
+  width: 100%; /* si es block */
+  font-weight: 600;
+  font-size: 18px;
+}
 
 
-  /* Solo es Footer */
-  
-  .footer {
-    background-color: #DBDBDB;  /* fondo gris oscuro */
-    color: #212121;             /* texto gris claro */
-    font-weight: bold;
-    font-family: 'Century Gothic', sans-serif;
-    font-size: 14px;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  .footer-content p {
-    margin: 0;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-  }
+/* NAVBAR CONTAINER */
+.navbar-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
 
+.dropdown {
+  margin-left: -216%;
+}
+
+/* DROPDOWN */
 .dropdown-menu {
   border-radius: 1px;
-  padding: 27px;
-  min-width: 193px;
-  margin-top: 36px;
-  margin-left: -11px;
-
+  padding: 20px;
+  min-width: 180px;
+  margin-top: 34px;
+  margin-left: -207px;
 }
 
-.dropdown-menu .dropdown-item:active {
-  background-color: white; /* azredul bootstrap */
-  color: white;
-  transform: scale(0.98); /* efecto ligero de presión */
+.dropdown .nav-link .dropdown{
+  color: black;
+  background-color: white;
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 5px;
 }
 
-/* Hover en los items */
+
+.dropdown-menu .dropdown-item {
+  color: black;
+  background-color: white;
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+
+.dropdown-menu .dropdown-item:active,
+.dropdown-item.active {
+  background-color: #f1f1f1;
+  color: #000;
+}
+
 .dropdown-menu .dropdown-item:hover {
   color: black;
   font-weight: bold;
@@ -86,49 +77,102 @@
   transition: transform 0.1s ease;
 }
 
-.dropdown-item.active, .dropdown-item:active {
-  color: black;
-  text-decoration: none;
-  background-color: white
+/* FOOTER */
+.footer {
+  background-color: #DBDBDB;
+  color: #212121;
+  font-weight: bold;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
 }
 
-@media (max-width: 768px) {
+.footer-content span {
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+
+@media (max-width: 800px) {
+  .dropdown {
+    margin-left: -216%;
+  }
+}
+
+@media (max-width: 995px) {
+  .dropdown{
+    margin-left: -124%;
+}
+
+.dropdown-menu {
+  margin-top: 35px;
+  margin-left: -118px;
+}
+
+}
+
+/* MOBILE & TABLET RESPONSIVE */
+@media  (max-width: 990px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
   }
 
+  .logo svg {
+    width: 160px;
+  }
+
   .navbar-container {
     width: 100%;
-    display: none;
     flex-direction: column;
-    background-color: #b71c1c;
-    padding-left: 15px;
+    align-items: flex-start;
+    padding-top: 10px;
+    display: none;
+  }
+
+  .dropdown {
+    margin-left: -216%;
   }
 
   .navbar-container.active {
     display: flex;
   }
 
-  .menu-toggle {
-    display: flex;
-    align-self: flex-end;
-    margin-bottom: 10px;
-  }
-
-  .dropdown:hover .dropdown-menu {
-    display: none;
-  }
-
   .dropdown-menu {
     position: static;
     background: transparent;
     box-shadow: none;
+    padding: 10px 0;
   }
 
-  .dropdown-menu a {
+  .dropdown-menu .dropdown-item {
+    background: transparent;
     color: white;
-    padding-left: 10px;
+    padding: 8px 10px;
+    font-weight: normal;
   }
 
+  .dropdown-menu .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 26px;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  
+  
 }

@@ -5,6 +5,7 @@ import { CreateComponent } from '../create/create.component';
 import Swal from 'sweetalert2';
 import { PassagerAddDto } from '../../dtos/passagerDto';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,12 +19,31 @@ import { CommonModule } from '@angular/common';
 export class TravelersComponent {
   data: PassagerAddDto[] = []
  constructor(
-  public dialog: MatDialog
+  public dialog: MatDialog,
+  public router: Router
+
   ){
 
  }
 
  addPassager(){
+
+  const cityData = localStorage.getItem("city");
+  if(cityData == null){
+      Swal.fire({
+        icon: 'warning',
+        title: 'Falta la cuidad',
+        text: `Primero debes ingresar una ciudad`,
+        confirmButtonText: 'Cerrar',
+        confirmButtonColor: '#dc3545',
+        allowOutsideClick: false,
+      }).then(() => {
+        this.router.navigate(['/airline/city']);
+      });
+      
+  return; 
+  }
+
   const dialogRef =  this.dialog.open(CreateComponent, {
        width: '900px'
      })
