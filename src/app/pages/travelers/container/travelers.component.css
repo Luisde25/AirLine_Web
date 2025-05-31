@@ -41,3 +41,13 @@
 .datatable tbody tr:hover {
   background-color: #f1f1f1;
 }
+
+input[type="text"] {
+  padding: 6px 13px;
+  font-size: 14px;
+  border: 1px solid;
+  margin-top: 11px;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}

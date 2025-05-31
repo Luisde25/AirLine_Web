@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { CreateComponent } from '../create/create.component';
@@ -6,25 +6,46 @@ import Swal from 'sweetalert2';
 import { PassagerAddDto } from '../../dtos/passagerDto';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-travelers',
   imports: [
     CommonModule,
+    FormsModule,
     MatIconModule],
   templateUrl: './travelers.component.html',
   styleUrls: ['./travelers.component.css']
 })
-export class TravelersComponent {
+export class TravelersComponent implements OnInit {
   data: PassagerAddDto[] = []
+  searchText: string = '';
+  filteredData: any[] = [];
+
  constructor(
   public dialog: MatDialog,
   public router: Router
 
   ){
 
+    
+    
  }
+  ngOnInit(): void {
+    const passager =  localStorage.getItem("passager");
+
+    if(passager){
+      const passag = JSON.parse(passager) ?? "" ;
+      if(passager){
+        this.data.push(...passag); 
+        console.info(this.data)
+      }
+    }
+  }
+
+
+
 
  addPassager(){
 
@@ -76,7 +97,7 @@ export class TravelersComponent {
               if(!exists && result.name != '' && result.typeIdentification != '' && result.identificationNumber != ''
                 && result.countries != '' && result.departments != '' && result.cities != ''){
                 this.data.push(result);
-                // localStorage.setItem("city", JSON.stringify(this.data));
+                 localStorage.setItem("passager", JSON.stringify(this.data));
                 Swal.fire({
                   icon: 'success',
                   title: 'Acción exitosa',
@@ -100,7 +121,7 @@ export class TravelersComponent {
             if(result.name != '' && result.typeIdentification != '' && result.identificationNumber != ''
               && result.countries != '' && result.departments != '' && result.cities != '') {
                 this.data.push(result);
-                // localStorage.setItem("passage", JSON.stringify(this.data));
+                localStorage.setItem("passager", JSON.stringify(this.data));
                 Swal.fire({
                   icon: 'success',
                   title: 'Acción exitosa',
@@ -123,6 +144,19 @@ export class TravelersComponent {
         }
   })
 
+  }
+
+  buscar() {
+    const text = this.searchText.toLowerCase().trim();
+    if (!text) {
+        location.reload()
+    }
+
+    this.data = this.data.filter((pasajero:PassagerAddDto) =>
+      pasajero.identificationNumber.toString().toLowerCase().includes(text) ||
+      pasajero.countries.toLowerCase().includes(text) ||
+      pasajero.cities.toLowerCase().includes(text) );
+   
   }
 
   delete(){

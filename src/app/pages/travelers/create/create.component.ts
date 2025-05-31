@@ -37,10 +37,9 @@ export class CreateComponent implements OnInit {
     const cities = JSON.parse(localStorage.getItem("city") ?? "") ?? "" ;
     if(cities){
       this.componentCities.push(...cities); 
-      this.countries = this.componentCities.map(c => c.country);
-      this.departments = this.componentCities.map(c => c.department);
-      this.cities = this.componentCities.map(c => c.city);
-      console.info(this.data)
+      this.countries = [...new Set(this.componentCities.map(c => c.country))];
+      this.departments = [...new Set(this.componentCities.map(c => c.department))];
+      this.cities = [...new Set(this.componentCities.map(c => c.city))];
     }
 
     

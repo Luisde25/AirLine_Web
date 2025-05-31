@@ -7,6 +7,16 @@
     <!-- <mat-icon>delete</mat-icon> -->
      <strong>Limpiar</strong>
   </span>
+  <span class="add-pasager" >
+     <strong>Buscar</strong>
+     <input
+     class="form-control mb-2 w-100" 
+     type="text"
+     placeholder="Buscar por cédula, ciudad o país"
+     [(ngModel)]="searchText"
+     (input)="buscar()"
+   />
+  </span>
 
   <table class="datatable">
     <thead>
